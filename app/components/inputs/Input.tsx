@@ -61,8 +61,8 @@ const Input: React.FC<InputProps> = ({
           disabled:opacity-70
           disabled:cursor-not-allowed
           ${formatPrice ? 'pl-9' : 'pl-4'}
-          ${errors[id] ? 'border-violet-500' : 'border-neutral-300'}
-          ${errors[id] ? 'focus:border-violet-500' : 'focus:border-black'}
+          ${errors[id] ? 'border-violet-600' : 'border-neutral-300'}
+          ${errors[id] ? 'focus:border-violet-600' : 'focus:border-black'}
         `}
       />
       <label 
@@ -80,7 +80,7 @@ const Input: React.FC<InputProps> = ({
           peer-placeholder-shown:translate-y-0 
           peer-focus:scale-75
           peer-focus:-translate-y-4
-          ${errors[id] ? 'text-violet-500' : 'text-zinc-400'}
+          ${errors[id] ? 'text-violet-600' : 'text-zinc-400'}
         `}
       >
         {label}

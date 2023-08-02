@@ -58,7 +58,7 @@ const UserMenu: React.FC<UserMenuProps> = ({
             cursor-pointer
           "
         >
-          StoragePal your home
+          List your storage space
         </div>
         <div 
         onClick={toggleOpen}
@@ -115,11 +115,11 @@ const UserMenu: React.FC<UserMenuProps> = ({
                   onClick={() => router.push('/reservations')}
                 />
                 <MenuItem 
-                  label="My properties" 
+                  label="My storage spaces" 
                   onClick={() => router.push('/properties')}
                 />
                 <MenuItem 
-                  label="StoragePal your home" 
+                  label="List your storage space" 
                   onClick={rentModal.onOpen}
                 />
                 <hr />

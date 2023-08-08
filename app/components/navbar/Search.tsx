@@ -42,14 +42,6 @@ const Search = () => {
     return 'Any Time'
   }, [startDate, endDate]);
 
-  const guestLabel = useMemo(() => {
-    if (guestCount) {
-      return `${guestCount} Guests`;
-    }
-
-    return 'All Spaces';
-  }, [guestCount]);
-
   return ( 
     <div
       onClick={searchModal.onOpen}
@@ -108,7 +100,6 @@ const Search = () => {
             gap-3
           "
         >
-          <div className="hidden sm:block">{guestLabel}</div>
           <div 
             className="
               p-2 

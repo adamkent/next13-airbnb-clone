@@ -19,8 +19,8 @@ import Heading from '../Heading';
 
 enum STEPS {
   LOCATION = 0,
-  DATE = 1,
-  INFO = 2,
+  DATE = 1//,
+  //INFO = 2,
 }
 
 const SearchModal = () => {
@@ -53,7 +53,7 @@ const SearchModal = () => {
   }, []);
 
   const onSubmit = useCallback(async () => {
-    if (step !== STEPS.INFO) {
+    if (step !== STEPS.DATE) {
       return onNext();
     }
 
@@ -65,10 +65,7 @@ const SearchModal = () => {
 
     const updatedQuery: any = {
       ...currentQuery,
-      locationValue: location?.value,
-      guestCount,
-      roomCount,
-      bathroomCount
+      locationValue: location?.value
     };
 
     if (dateRange.startDate) {
@@ -92,17 +89,14 @@ const SearchModal = () => {
     step, 
     searchModal, 
     location, 
-    router, 
-    guestCount, 
-    roomCount,
+    router,
     dateRange,
     onNext,
-    bathroomCount,
     params
   ]);
 
   const actionLabel = useMemo(() => {
-    if (step === STEPS.INFO) {
+    if (step === STEPS.DATE) {
       return 'Search'
     }
 
@@ -154,28 +148,6 @@ const SearchModal = () => {
         <Heading
           title="More information"
           subtitle="Find the perfect storage space!"
-        />
-        <Counter 
-          onChange={(value) => setGuestCount(value)}
-          value={guestCount}
-          title="Number of items" 
-          subtitle="How many items do you need to store?"
-        />
-        <hr />
-        <Counter 
-          onChange={(value) => setRoomCount(value)}
-          value={roomCount}
-          title="Rooms" 
-          subtitle="How many rooms do you need?"
-        />        
-        <hr />
-        <Counter 
-          onChange={(value) => {
-            setBathroomCount(value)
-          }}
-          value={bathroomCount}
-          title="Bathrooms"
-          subtitle="How many bahtrooms do you need?"
         />
       </div>
     )

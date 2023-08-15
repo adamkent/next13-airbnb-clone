@@ -14,7 +14,7 @@ import { useMemo, useState } from "react";
 import useRentModal from '@/app/hooks/useRentModal';
 
 import Modal from "./Modal";
-import Counter from "../inputs/Counter";
+//import Counter from "../inputs/Counter";
 import CategoryInput from '../inputs/CategoryInput';
 import CountrySelect from "../inputs/CountrySelect";
 import { categories } from '../navbar/Categories';
@@ -25,10 +25,10 @@ import Heading from '../Heading';
 enum STEPS {
   CATEGORY = 0,
   LOCATION = 1,
-  INFO = 2,
-  IMAGES = 3,
-  DESCRIPTION = 4,
-  PRICE = 5,
+  //INFO = 2,
+  IMAGES = 2,
+  DESCRIPTION = 3,
+  PRICE = 4,
 }
 
 const RentModal = () => {
@@ -63,9 +63,9 @@ const RentModal = () => {
 
   const location = watch('location');
   const category = watch('category');
-  const guestCount = watch('guestCount');
-  const roomCount = watch('roomCount');
-  const bathroomCount = watch('bathroomCount');
+  //const guestCount = watch('guestCount');
+  //const roomCount = watch('roomCount');
+  //const bathroomCount = watch('bathroomCount');
   const imageSrc = watch('imageSrc');
 
   const Map = useMemo(() => dynamic(() => import('../Map'), { 
@@ -175,7 +175,7 @@ const RentModal = () => {
     );
   }
 
-  if (step === STEPS.INFO) {
+  /*if (step === STEPS.INFO) {
     bodyContent = (
       <div className="flex flex-col gap-8">
         <Heading
@@ -204,7 +204,7 @@ const RentModal = () => {
         />
       </div>
     )
-  }
+  }*/
 
   if (step === STEPS.IMAGES) {
     bodyContent = (

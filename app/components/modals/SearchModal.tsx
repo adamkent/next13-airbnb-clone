@@ -12,9 +12,9 @@ import useSearchModal from "@/app/hooks/useSearchModal";
 import Modal from "./Modal";
 import Calendar from "../inputs/Calendar";
 import Counter from "../inputs/Counter";
-import CountrySelect, { 
+import AddressSelect, { 
   CountrySelectValue
-} from "../inputs/CountrySelect";
+} from "../inputs/AddressSelect";
 import Heading from '../Heading';
 
 enum STEPS {
@@ -117,7 +117,7 @@ const SearchModal = () => {
         title="Where do you need storage?"
         subtitle="Find a nearby location!"
       />
-      <CountrySelect 
+      <AddressSelect 
         value={location} 
         onChange={(value) => 
           setLocation(value as CountrySelectValue)} 
